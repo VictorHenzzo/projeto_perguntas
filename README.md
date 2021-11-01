@@ -1,16 +1,38 @@
-# projeto_perguntas
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-A new Flutter project.
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <img src="./logo.png" alt="Logo" width="100">
 
-## Getting Started
+  <h3 align="center">Quiz App</h3>
 
-This project is a starting point for a Flutter application.
+  <p align="center">This is a simple Quiz App made with Flutter</p>
+</div>
 
-A few resources to get you started if this is your first Flutter project:
+<!-- ABOUT THE PROJECT -->
+## About The Project
+<div align="center"><img src="product.gif" alt="Quiz App" width="200"/></div>
+<br>
+The idea behind this repository is to explore the framework Flutter and improve my development skill, building a simple app.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<br>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Built With
+
+* [Flutter](https://flutter.dev/)
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+## Contact
+
+Victor Henzzo - victorhenzzowp@gmail.com
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/victorhenzzo/
+[product-screenshot]: product.gif
