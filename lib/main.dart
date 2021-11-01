@@ -11,30 +11,52 @@ class _PerguntaAppState extends State<PerguntaApp> {
   var pontuacaoTotal = 0;
   final _perguntas = const [
     {
-      'texto': 'Qual é a sua cor favorita?',
+      'texto':
+          'Dois pais e dois filhos sentaram-se para comer ovos no café da manhã. Cada um comeu um ovo. Quanto ovos eles comeram no total?',
       'respostas': [
-        {'texto': 'Azul', 'pontuacao': 1},
-        {'texto': 'Preto', 'pontuacao': 0},
-        {'texto': 'Verde', 'pontuacao': 0},
-        {'texto': 'Rosa', 'pontuacao': 0},
+        {'texto': '1', 'pontuacao': 0},
+        {'texto': '3', 'pontuacao': 1},
+        {'texto': '5', 'pontuacao': 0},
+        {'texto': '8', 'pontuacao': 0},
       ]
     },
     {
-      'texto': 'Qual é o seu animal favorito?',
+      'texto':
+          'Andando por uma rua, um homem conta 10 árvores à sua direita. Na volta, conta 10 árvores à sua esquerda. Quantas árvores ele viu no total?',
       'respostas': [
-        {'texto': 'Gato', 'pontuacao': 0},
-        {'texto': 'Cachorro', 'pontuacao': 1},
-        {'texto': 'Pássaro', 'pontuacao': 0},
-        {'texto': 'Peixe', 'pontuacao': 0},
+        {'texto': '10', 'pontuacao': 1},
+        {'texto': '20', 'pontuacao': 0},
+        {'texto': '30', 'pontuacao': 0},
+        {'texto': '40', 'pontuacao': 0},
       ]
     },
     {
-      'texto': 'Qual é o seu instrumento favorito?',
+      'texto':
+          'Uma mãe tem 30 reais para dividir entre duas filhas. Qual o horário?',
       'respostas': [
-        {'texto': 'Guitarra', 'pontuacao': 1},
-        {'texto': 'Baixo', 'pontuacao': 0},
-        {'texto': 'Bateria', 'pontuacao': 0},
-        {'texto': 'Teclado', 'pontuacao': 0},
+        {'texto': '11:50', 'pontuacao': 0},
+        {'texto': '13:45', 'pontuacao': 1},
+        {'texto': '19:03', 'pontuacao': 0},
+        {'texto': '09:30', 'pontuacao': 0},
+      ]
+    },
+    {
+      'texto': 'Se ontem fosse amanhã, hoje seria sexta-feira. Que dia é hoje?',
+      'respostas': [
+        {'texto': 'Sexta-feira', 'pontuacao': 0},
+        {'texto': 'Domingo', 'pontuacao': 0},
+        {'texto': 'Quarta-feira', 'pontuacao': 1},
+        {'texto': 'Quinta-feira', 'pontuacao': 0},
+      ]
+    },
+    {
+      'texto':
+          'Uma garafa com sua rolha custa R\$1,10. Sabendo que a garrafa custa R\$1,00 a mais que a rolha, qual é o preço da rolha?',
+      'respostas': [
+        {'texto': 'R\$0,50', 'pontuacao': 0},
+        {'texto': 'R\$0,10', 'pontuacao': 0},
+        {'texto': 'R\$0,05', 'pontuacao': 1},
+        {'texto': 'R\$0,01', 'pontuacao': 0},
       ]
     }
   ];
