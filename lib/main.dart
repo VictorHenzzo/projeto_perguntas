@@ -1,4 +1,5 @@
-import './questao.dart';
+import './questionario.dart';
+import './resultado.dart';
 import 'package:flutter/material.dart';
 
 main() {
@@ -7,54 +8,75 @@ main() {
 
 class _PerguntaAppState extends State<PerguntaApp> {
   var perguntaSelecionada = 0;
+  var pontuacaoTotal = 0;
+  final _perguntas = const [
+    {
+      'texto': 'Qual é a sua cor favorita?',
+      'respostas': [
+        {'texto': 'Azul', 'pontuacao': 1},
+        {'texto': 'Preto', 'pontuacao': 0},
+        {'texto': 'Verde', 'pontuacao': 0},
+        {'texto': 'Rosa', 'pontuacao': 0},
+      ]
+    },
+    {
+      'texto': 'Qual é o seu animal favorito?',
+      'respostas': [
+        {'texto': 'Gato', 'pontuacao': 0},
+        {'texto': 'Cachorro', 'pontuacao': 1},
+        {'texto': 'Pássaro', 'pontuacao': 0},
+        {'texto': 'Peixe', 'pontuacao': 0},
+      ]
+    },
+    {
+      'texto': 'Qual é o seu instrumento favorito?',
+      'respostas': [
+        {'texto': 'Guitarra', 'pontuacao': 1},
+        {'texto': 'Baixo', 'pontuacao': 0},
+        {'texto': 'Bateria', 'pontuacao': 0},
+        {'texto': 'Teclado', 'pontuacao': 0},
+      ]
+    }
+  ];
 
-  void responder() {
+  void _responder(int pontuacao) {
+    if (temPerguntaSelecionada) {
+      setState(() {
+        perguntaSelecionada++;
+        pontuacaoTotal += pontuacao;
+      });
+    }
+  }
+
+  void _reiniciarQuestionario() {
     setState(() {
-      perguntaSelecionada == 0
-          ? perguntaSelecionada++
-          : perguntaSelecionada = 0;
+      perguntaSelecionada = 0;
+      pontuacaoTotal = 0;
     });
-    print(perguntaSelecionada);
+  }
+
+  bool get temPerguntaSelecionada {
+    return perguntaSelecionada < _perguntas.length;
   }
 
   @override
   Widget build(BuildContext context) {
-    final perguntas = ['Qual a sua cor favorita?', 'Qual seu animal favorito?'];
-
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: const Text("Perguntas"),
+        title: Text("Perguntas"),
       ),
-      body: Column(
-        children: [
-          Questao(perguntas[perguntaSelecionada]),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                onSurface: Colors.green,
-                elevation: 10,
-              ),
-              child: const Text("Botão 1"),
-              onPressed: responder),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                onSurface: Colors.green,
-                elevation: 10,
-              ),
-              child: const Text("Botão 2"),
-              onPressed: responder),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                onSurface: Colors.green,
-                elevation: 10,
-              ),
-              child: const Text("Botão 3"),
-              onPressed: responder),
-        ],
-      ),
+      body: temPerguntaSelecionada
+          ? Questionario(
+              perguntas: _perguntas,
+              perguntaSelecionada: perguntaSelecionada,
+              funcResponder: _responder,
+            )
+          : Resultado(
+              pontuacaoDoQuiz: pontuacaoTotal,
+              numeroDePerguntas: perguntaSelecionada,
+              funcReiniciarQuestionario: _reiniciarQuestionario,
+            ),
     ));
   }
 }
